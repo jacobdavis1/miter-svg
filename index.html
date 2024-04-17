@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div>
+            <input type="text" id="miterCode" placeholder="Miter Code" value="BES">
+            <input type="text" id="pieceLength" placeholder="Length" value="100">
+        </div>
+        <div>
+            <input type="radio" id="ceilingTrack" name="miterJobType" value="CLG">
+            <label for="ceilingTrack">Ceiling Track, Non-Vertical</label>
+            <input type="radio" id="ceilingTrackVertical" name="miterJobType" value="CLGV">
+            <label for="ceilingTrackVertical">Ceiling Track, Vertical</label>
+            <input type="radio" id="floorTrack" name="miterJobType" value="FLR" checked="true">
+            <label for="floorTrack">Floor Track</label>
+            <br>
+            <button onclick="setPoints()">Get Diagram</button>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" id="diagram" width="300" height="150" viewBox="0 0 150 50">
+                <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="style.css" type="text/css"/>
+
+                <text x="46" y="7" id="topText" class="small">INSIDE</text>
+                <polygon id="topView" points="10,10 90,10 90,20 10,20" style="fill:none;stroke:black;stroke-width: 1;"></polygon>
+                <polyline id="sideView" points="123,10 130,10 130,20 123,20" style="fill:none;stroke:black;stroke-width: 1;"></polyline>
+                <text x="44" y="27" id="bottomText" class="small">OUTSIDE</text>
+
+                <text x="35" y="40" id="topViewLabel" class="medium">FRONT VIEW</text>
+                <text x="112" y="40" id="sideViewLabel" class="medium">RIGHT SIDE</text>
+            </svg>
+        </div>
+    </body>
+</html>
